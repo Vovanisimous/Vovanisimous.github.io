@@ -9,7 +9,6 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "homepage": "vovanisimous.github.io/Vovanisimous.github.io",
   "dependencies": {
     "@pbe/react-yandex-maps": "^1.2.5",
     "@supabase/supabase-js": "^2.40.0",
