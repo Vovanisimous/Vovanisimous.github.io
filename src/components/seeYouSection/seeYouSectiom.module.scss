@@ -30,12 +30,12 @@
   }
 
   > .backgroundImage {
-    background-image: url("src/assets/see-you-section-bg.png");
+    background-image: url("/assets/see-you-section-bg.png");
     background-size: cover;
     background-position: center center;
 
     @media (max-width: 680px) {
-      background-image: url("src/assets/see-you-section-bg-mobile.png");
+      background-image: url("/assets/see-you-section-bg-mobile.png");
     }
 
     position: absolute;

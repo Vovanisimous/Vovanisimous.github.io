@@ -178,8 +178,8 @@ export const QuestionnaireSection = ({
       <img
         src={
           window.innerWidth > 680
-            ? "src/assets/questionnaire-section-image.png"
-            : "src/assets/questionnaire-section-image-mobile.png"
+            ? "/assets/questionnaire-section-image.png"
+            : "/assets/questionnaire-section-image-mobile.png"
         }
         alt={"image"}
       />

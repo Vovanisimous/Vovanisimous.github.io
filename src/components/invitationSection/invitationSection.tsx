@@ -13,8 +13,8 @@ export const InvitationSection = (): ReactElement => {
       <img
         src={
           window.innerWidth > 680
-            ? "src/assets/invitation-section-image.png"
-            : "src/assets/invitation-section-image-mobile.png"
+            ? "/assets/invitation-section-image.png"
+            : "/assets/invitation-section-image-mobile.png"
         }
         alt="Wedding Background"
       />
