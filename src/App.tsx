@@ -38,19 +38,23 @@ function App() {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setCurrentSession(session);
-
-      supabase
-        .from("users_information")
-        .select()
-        .eq("id", session?.user.id)
-        .then((data: PostgrestSingleResponse<IUserInformation[]>) => {
-          if (!data.data || !data.data.length) {
-            supabase.from("users_information").insert({ id: session?.user.id });
-          } else {
-            setUserInformation(data.data[0]);
-          }
-        });
     });
+  }, []);
+
+  useEffect(() => {
+    supabase
+      .from("users_information")
+      .select()
+      .eq("id", currentSession?.user.id)
+      .then((data: PostgrestSingleResponse<IUserInformation[]>) => {
+        if (!data.data || !data.data.length) {
+          supabase
+            .from("users_information")
+            .insert({ id: currentSession?.user.id });
+        } else {
+          setUserInformation(data.data[0]);
+        }
+      });
   }, [currentSession]);
 
   if (!currentSession) {
