@@ -42,19 +42,21 @@ function App() {
   }, []);
 
   useEffect(() => {
-    supabase
-      .from("users_information")
-      .select()
-      .eq("id", currentSession?.user.id)
-      .then((data: PostgrestSingleResponse<IUserInformation[]>) => {
-        if (!data.data || !data.data.length) {
-          supabase
-            .from("users_information")
-            .insert({ id: currentSession?.user.id });
-        } else {
-          setUserInformation(data.data[0]);
-        }
-      });
+    if (currentSession?.user.id) {
+      supabase
+        .from("users_information")
+        .select()
+        .eq("id", currentSession?.user.id)
+        .then((data: PostgrestSingleResponse<IUserInformation[]>) => {
+          if (!data.data || !data.data.length) {
+            supabase
+              .from("users_information")
+              .insert({ id: currentSession?.user.id });
+          } else {
+            setUserInformation(data.data[0]);
+          }
+        });
+    }
   }, [currentSession]);
 
   if (!currentSession) {
