@@ -1,0 +1,48 @@
+.wrapper {
+  height: 100vh;
+  padding: 65px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+
+  > .informationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 96px;
+
+    text-align: center;
+
+    > .informationWrapper {
+      display: flex;
+      gap: 68px;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+
+      @media (max-width: 560px) {
+        flex-direction: column;
+        gap: 30px
+      }
+
+      > .time {
+        font-size: 1.6rem;
+      }
+
+      > .hyphen {
+        width: 55px;
+        height: 1px;
+        background-color: black;
+      }
+
+      > .address {}
+
+    }
+  }
+
+  > .mapContainer {
+    height: 100%;
+  }
+}

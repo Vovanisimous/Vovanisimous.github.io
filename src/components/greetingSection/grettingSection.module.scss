@@ -1,0 +1,44 @@
+.wrapper {
+  color: #FFFFFF;
+  height: 100vh;
+
+  > .backgroundImage {
+    background-image: url("src/assets/greeting-section-bg.png");
+    background-size: cover;
+    background-position: left center;
+
+    @media (max-width: 680px) {
+      background-image: url("src/assets/greeting-section-bg-mobile.png");
+    }
+
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  > .coupleNames {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    gap: 20px;
+    font-size: 1rem;
+    padding-top: 50px;
+
+    @media (max-width: 991px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  > .title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 82px);
+    font-size: 13vw;
+  }
+}

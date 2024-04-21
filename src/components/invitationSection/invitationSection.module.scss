@@ -1,0 +1,13 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+  text-align: center;
+
+  .img {
+    width: 100%;
+  }
+}

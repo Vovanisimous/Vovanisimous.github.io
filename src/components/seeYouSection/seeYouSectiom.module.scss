@@ -1,0 +1,47 @@
+.wrapper {
+  color: #FFFFFF;
+  height: 100vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  font-size: 13vw;
+
+  margin: 20px -110px 0px -110px;
+
+  @media (max-width: 1536px) {
+    margin: 20px -80px 0px -80px;
+  }
+
+  @media (max-width: 1280px) {
+    margin: 0 -50px;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 0 -20px;
+  }
+
+  @media (max-width: 320px) {
+    margin: 0;
+  }
+
+  > .backgroundImage {
+    background-image: url("src/assets/see-you-section-bg.png");
+    background-size: cover;
+    background-position: center center;
+
+    @media (max-width: 680px) {
+      background-image: url("src/assets/see-you-section-bg-mobile.png");
+    }
+
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+}

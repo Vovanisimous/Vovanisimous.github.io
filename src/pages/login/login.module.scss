@@ -1,0 +1,139 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-image: url("src/assets/login-bg.png");
+
+  margin: 0 -110px;
+  line-height: 1;
+
+  @media (max-width: 1536px) {
+    margin: 0 -80px;
+  }
+
+  @media (max-width: 1280px) {
+    margin: 0 -50px;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 0 -20px;
+  }
+
+  @media (max-width: 755px) {
+    align-items: center;
+  }
+
+  @media (max-width: 320px) {
+    margin: 0;
+  }
+
+  > .loginContainer {
+    width: 40%;
+    margin-left: 10%;
+
+    text-align: center;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+
+    padding: 64px 43px;
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+
+    @media (max-width: 1536px) {
+      padding: 50px 30px;
+    }
+
+    @media (max-width: 1280px) {
+      padding: 35px 25px;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 25px 18px;
+    }
+
+    @media (max-width: 755px) {
+      width: 70%;
+      margin-left: 0;
+    }
+
+    @media (max-width: 320px) {
+      padding: 10px 10px;
+    }
+
+    > .comment {
+      font-size: 0.6rem;
+    }
+
+    > input {
+      align-self: stretch;
+      border-radius: 20px;
+      border: none;
+      background-color: #F3F2F0;
+      padding: 0 20px;
+      height: 1.5rem;
+      font-size: 0.7rem;
+    }
+
+    > button {
+      align-self: stretch;
+      border-radius: 20px;
+      background-color: #3A3837;
+      outline: none;
+      border-style: none;
+      height: 2rem;
+      font-size: 0.7rem;
+      font-family: Viaoda Libre, system-ui, sans-serif;
+      cursor: pointer;
+
+      &:disabled {
+
+        &:hover {
+          background-color: #3A3837;
+        }
+      }
+
+      &:disabled:active {
+        transform: none;
+        background-color: #3A3837;
+      }
+
+      &:hover {
+        background-color: #2a2928;
+      }
+
+      &:active {
+        background-color: #2a2928;
+        transform: scale(0.98);
+      }
+
+      .loader {
+        width: 0.6rem;
+        height:0.6rem;
+        border: 3px solid #fff;
+        border-top: 3px solid #3A3837;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        box-sizing: border-box;
+        transform-origin: 50% 50%;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}
