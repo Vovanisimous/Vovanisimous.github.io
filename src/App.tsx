@@ -8,6 +8,7 @@ import { QuestionnaireSection } from "./components/questionnaireSection/question
 import { SeeYouSection } from "./components/seeYouSection/seeYouSection.tsx";
 import { Login } from "./pages/login/login.tsx";
 import { FooterSection } from "./components/footerSection/footerSection.tsx";
+import classes from "./app.module.scss";
 
 export interface IUserInformation {
   id: string;
@@ -63,7 +64,7 @@ function App() {
     return <Login setCurrentSession={setCurrentSession} />;
   } else {
     return (
-      <div>
+      <div className={classes.wrapper}>
         <GreetingSection />
         <InvitationSection />
         <InformationSection />

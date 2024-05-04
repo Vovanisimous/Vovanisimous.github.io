@@ -1,6 +1,6 @@
 .wrapper {
   color: #FFFFFF;
-  height: 100vh;
+  height: 100dvh;
 
   > .backgroundImage {
     background-image: url("/assets/greeting-section-bg.png");
@@ -28,6 +28,7 @@
 
     @media (max-width: 991px) {
       flex-wrap: wrap;
+      padding-top: 20px;
     }
   }
 

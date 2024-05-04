@@ -10,14 +10,7 @@ export const InvitationSection = (): ReactElement => {
         приглашаем вас на знаменательный праздник - нашу свадьбу.
       </div>
       <h3>18.05.2024</h3>
-      <img
-        src={
-          window.innerWidth > 680
-            ? "/assets/invitation-section-image.png"
-            : "/assets/invitation-section-image-mobile.png"
-        }
-        alt="Wedding Background"
-      />
+      <div className={classes.image} />
     </div>
   );
 };

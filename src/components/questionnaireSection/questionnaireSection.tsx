@@ -175,14 +175,7 @@ export const QuestionnaireSection = ({
           </button>
         </div>
       </div>
-      <img
-        src={
-          window.innerWidth > 680
-            ? "/assets/questionnaire-section-image.png"
-            : "/assets/questionnaire-section-image-mobile.png"
-        }
-        alt={"image"}
-      />
+      <div className={classes.image} />
     </div>
   );
 };
