@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState } from "react";
+import { ReactElement, useState } from "react";
 import classes from "./login.module.scss";
 import { supabase } from "../../supabaseClient.ts";
 import { Session } from "@supabase/supabase-js";
@@ -11,7 +11,6 @@ export const Login = ({
   const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(false);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  const loaderRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className={classes.wrapper}>
@@ -31,14 +30,15 @@ export const Login = ({
         />
         <button
           disabled={isSubmitButtonDisabled}
-          onClick={() => {
-            if (loaderRef.current) {
-              loaderRef.current.hidden = false;
+          onClick={async () => {
+            if (!login || !password) {
+              window.alert("Заполните поля");
+              return;
             }
 
             setSubmitButtonDisabled(true);
 
-            supabase.auth
+            await supabase.auth
               .signInWithPassword({
                 email: `${login}@wedding-invitation.com`,
                 password,
@@ -47,14 +47,11 @@ export const Login = ({
                 setCurrentSession(data.data.session);
               });
 
-            if (loaderRef.current) {
-              loaderRef.current.hidden = true;
-            }
-
             setSubmitButtonDisabled(false);
           }}
         >
-          Войти <div ref={loaderRef} className={classes.loader} hidden />
+          Войти{" "}
+          <div className={classes.loader} hidden={!isSubmitButtonDisabled} />
         </button>
       </div>
     </div>

@@ -95,6 +95,11 @@
       font-family: Viaoda Libre, system-ui, sans-serif;
       cursor: pointer;
 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
       &:disabled {
 
         &:hover {
