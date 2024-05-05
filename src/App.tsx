@@ -42,6 +42,10 @@ function App() {
     });
   }, []);
 
+  // useEffect(() => {
+  //   supabase.auth.signOut();
+  // }, []);
+
   useEffect(() => {
     if (currentSession?.user.id) {
       supabase
@@ -52,7 +56,8 @@ function App() {
           if (!data.data || !data.data.length) {
             supabase
               .from("users_information")
-              .insert({ id: currentSession?.user.id });
+              .insert({ id: currentSession?.user.id })
+              .then((res) => console.log(res));
           } else {
             setUserInformation(data.data[0]);
           }
