@@ -27,7 +27,7 @@ export const InformationSection = (): ReactElement => {
           defaultState={defaultState}
           modules={["control.ZoomControl", "control.FullscreenControl"]}
           width={"100%"}
-          height={"500px"}
+          height={window.innerWidth >= 1025 ? "500px" : "250px"}
           options={{
             autoFitToViewport: "always",
           }}
