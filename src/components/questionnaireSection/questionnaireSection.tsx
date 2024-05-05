@@ -5,8 +5,10 @@ import classes from "./questionnaireSection.module.scss";
 
 export const QuestionnaireSection = ({
   userInformation: { id, ...formValues },
+  userId,
 }: {
   userInformation: IUserInformation;
+  userId: string;
 }): ReactElement => {
   const [form, setForm] = useState(formValues);
   const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(false);
@@ -32,10 +34,12 @@ export const QuestionnaireSection = ({
 
     setSubmitButtonDisabled(true);
 
+    console.log(userId, "<<<<");
+
     const result = await supabase
       .from("users_information")
       .update(form)
-      .eq("id", id);
+      .eq("id", userId);
 
     if (result.error) {
       window.alert("Произошла ошибка. Обновите страницу и попробуйте снова");

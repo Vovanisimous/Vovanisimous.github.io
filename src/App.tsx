@@ -63,7 +63,10 @@ function App() {
         <GreetingSection />
         <InvitationSection />
         <InformationSection />
-        <QuestionnaireSection userInformation={userInformation} />
+        <QuestionnaireSection
+          userInformation={userInformation}
+          userId={currentSession.user.id}
+        />
         <SeeYouSection />
         <FooterSection />
       </div>
