@@ -44,6 +44,16 @@ export const Login = ({
                 password,
               })
               .then((data) => {
+                if (data.error?.message === "Invalid login credentials") {
+                  window.alert("Неправильный логин или пароль");
+                  return;
+                }
+
+                if (data.error) {
+                  window.alert("Произошла ошибка, попробуйте снова");
+                  return;
+                }
+
                 setCurrentSession(data.data.session);
               });
 
