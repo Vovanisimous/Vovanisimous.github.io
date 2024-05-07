@@ -90,11 +90,11 @@
     height: 100%;
     flex: 1;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 
 
     @media (max-width: 680px) {
-      background-image: url("/assets/questionnaire-section-image-mobile.png");
+      background-image: none;
       background-size: cover;
     }
   }
