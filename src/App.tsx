@@ -47,6 +47,7 @@ function App() {
       supabase
         .from("users_information")
         .upsert({ id: currentSession.user.id })
+        .select()
         .then((res: PostgrestSingleResponse<IUserInformation[] | null>) => {
           if (res.data) {
             setUserInformation(res.data?.[0]);
